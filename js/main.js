@@ -111,4 +111,4 @@ function popupOpen(){
 };
 
 
-// alert('이 사이트는 chrome 브라우저에 최적화 되어 있습니다!')
+alert('이 사이트는 chrome 브라우저에 최적화 되어 있습니다!')
