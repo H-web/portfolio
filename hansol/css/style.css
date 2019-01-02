@@ -1,0 +1,1113 @@
+@charset "utf-8";
+@import url(https://fonts.googlepis.com/earlyaccess/notosanskr.css);
+
+
+
+body {
+    min-width: 1000px;
+    font-family: 'Noto Sans KR', 'sans-serif';
+}
+
+body, h1, h2, h3, h5, p {
+    margin: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+#wrap {
+    width: 100%;
+}
+
+.cf:after {
+    content:"";
+    display: block;
+    clear: both;
+}
+
+.w1000 {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+
+ 
+
+
+
+
+#header {
+    width: 100%;
+    margin: 0 auto;
+    
+    position: relative;
+}    
+#header h1 {
+    width: 110px;
+    height: 43px;
+    
+    background: url(../images/sp_com.png) no-repeat;
+    background-position: -300px -5px;
+    text-indent: -9999px;
+    z-index: 4;
+    position: absolute;
+    top: 20px;
+    left: 133px;
+}
+#header h1 a {
+    display: block;
+}
+
+
+
+/***** gnb *****/
+
+.gnb {
+    width: 100%;
+    margin: 0 auto;
+    padding: 15px 0;
+	position: relative;
+}
+.gnb div{
+	width:100%;
+	height:0;
+	position: absolute;
+	top:80px;
+	background:#2d5b79;
+	opacity: 0.7;
+	z-index: 2;
+}
+.gnb:hover div{
+	height:310px;
+	transition: all 0.2s;
+
+}
+.gnb li {
+    float: left;
+    width:125px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+	position: relative;
+}
+.gnb .ml300 {
+	margin-left: 300px;
+}
+.gnb li:hover .lnb {
+	width:100%;
+}
+.gnb li .gnbA:hover {
+	font-weight: 800;
+	color:#2d5b79;
+	border-bottom:1px solid #2d5b79;
+	padding-bottom: 10px;
+}
+.gnb li a:hover{
+	border-bottom:1px solid #fff;
+}
+
+
+
+
+
+/***** lnb *****/
+.lnb {
+	width:100%;
+	height:315px;
+	position: absolute;
+	z-index: 3;
+	top:65px;
+	display: none;
+}
+.gnb:hover .lnb{
+	display: block;
+}
+.lnb li {
+	width: 100%;
+
+}
+.lnb li a {
+	font-size:13px;
+	font-weight: 600;
+	color:#fff;
+	
+}
+.lnb li a:hover {}
+
+
+/***** topMenu *****/
+
+.utill {
+    position: absolute;
+    bottom: 0;
+    right: 135px;
+    font-size: 0;
+}
+.utill li {
+    height: 50px;
+    display: inline-block;
+    font-size: 13px;
+    line-height: 50px;
+}
+.utill li:after {
+    content:"";
+    display: inline-block;
+    width: 1px;
+    height: 8px;
+    background: #CCC;
+    margin: 0 5px;
+}
+.utill li:last-child:after {
+    display: none;
+}
+.utill li a:hover {
+	text-decoration:underline;
+}
+
+
+/*************************
+        mainSlider
+**************************/
+
+#mainSlider {
+    width: 1000px;
+    margin: 0 auto;
+   position: relative;
+}
+#mainSlider img {
+    width: 100%;
+	z-index: -2;
+    display: block; /* <img>가  inline요소 이므로 생길 수 있는 공백을 없애기 위해 */
+}
+
+.sliderBtn div {
+    width: 25px;
+    height: 46px;
+    
+    position: absolute;
+    top: 50%;
+    margin-top: -23px;
+    z-index: 1;
+    
+    background: url(../images/sp_com.png) no-repeat;
+    text-indent: -9999px;
+}
+
+.sliderBtn div a {
+    display: block;
+    height: 100%;
+}
+
+.sliderBtn .prevBtn {
+    background-position: -129px -60px;
+    left: 20px;
+}
+.sliderBtn .nextBtn {
+    background-position: -160px -60px;
+    right: 20px;
+}
+
+
+/*************************
+        container
+**************************/
+
+#container {}
+
+/***** mainRow1 *****/
+.mainRow1 {
+    padding: 30px 0;
+}
+.mainRow1 ul {}
+.mainRow1 ul li {
+    float: left;
+    width: 16.666666%;
+    
+    text-align: center;
+}
+.mainRow1 ul li:hover .icon1{
+	background-position: -3px -186px;
+}
+.mainRow1 ul li:hover .icon2{
+	background-position: -74px -186px;
+}
+.mainRow1 ul li:hover .icon3{
+	background-position: -146px -181px;
+}
+.mainRow1 ul li:hover .icon4{
+	background-position: -217px -183px;
+}
+.mainRow1 ul li:hover .icon5{
+	background-position: -290px -183px;
+}
+.mainRow1 ul li:hover .icon6{
+	background-position: -365px -183px;
+}
+.mainRow1 ul li:hover p{
+	color:#2d5b79;
+	font-weight: 800;
+}
+.mainRow1 ul li a {
+    display: block;
+}
+.mainRow1 ul li a span {
+    width: 64px;
+    height: 55px;
+    
+    display: block; /*<span>이 inline요소이므로 width, height값이 적용되지 않으므로 block으로 수정 */
+    margin: 0 auto; /* <span>을 block요소로 바꾸었기 때문에 text-align: center;가 적용되지 않음 -> 가운데 정렬을 위해 margin: 0 auto; 적용 */
+    
+    background: url(../images/sp_com.png) no-repeat;
+    text-indent: -9999px;
+}
+.mainRow1 .icon1 {
+    background-position: -3px -120px;
+}
+
+
+.mainRow1 .icon2 {
+    background-position: -74px -120px;
+}
+
+
+.mainRow1 .icon3 {
+    background-position: -146px -115px;
+}
+
+
+.mainRow1 .icon4 {
+    background-position: -217px -117px;
+}
+
+
+.mainRow1 .icon5 {
+    background-position: -290px -117px;
+}
+
+.mainRow1 .icon6 {
+    background-position: -365px -117px;
+}
+
+
+.mainRow1 ul li a p {}
+
+
+/***** mainRow2 *****/
+
+.mainRow2 {
+    background: #dfd9d1;
+    text-align: center;
+    padding: 30px 0;
+}
+.mainRow2 h2 {
+    font-size: 30px;
+    margin: 0;
+}
+.mainRow2 .stitle {
+    font-size: 15px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.row2Box {
+    position: relative;
+}
+
+.row2Box .sliderBtn .prevBtn {
+    background-position: -129px -60px;
+    left: -50px;
+}
+.row2Box .sliderBtn .nextBtn {
+    background-position: -160px -60px;
+    right: -50px;
+}
+
+
+
+
+
+.leftBox {
+    width: 700px;
+    float: left;
+    position: relative;
+}
+.leftBox img {
+    width: 100%;
+    display: block;
+}
+.leftBox .imgBox {
+    width: 30%;
+    height: 100%;
+    padding: 30px 15px;
+    box-sizing: border-box;
+    
+    color: white;
+    font-size: 13px;
+    text-align: left;
+    
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.leftBox .imgBox span {
+    font-size: 20px;
+}
+
+.leftBox .imgBox .moreBtn {
+    border: 1px solid white;
+    text-align: center;
+    
+    margin-top: 80px;
+}
+.leftBox .imgBox .moreBtn a {
+	padding: 10px 0;
+    display: block;
+    color: white;
+}
+.leftBox .imgBox .moreBtn a:hover{
+	background: #fff;
+	color:#000;
+	font-weight: 800;
+}
+.rightBox {
+    width: 300px;
+    height: 376px;
+    float: left;
+    background: white;
+    padding: 20px;
+    box-sizing: border-box;
+    
+    text-align: left;
+}
+.rightBox ul {
+    
+}
+.rightBox ul li {
+    height: 70px;
+    padding-left: 80px;
+    position: relative;
+    margin-top: 18px;
+}
+.rightBox ul li:first-child {
+    margin-top: 0;
+}
+
+.rightBox ul li a {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.rightBox ul li a img {
+    width: 70px;
+    height: 70px;
+    
+    position: absolute;
+    left: 0;
+}
+.rightBox ul li a h5 {
+    padding-top: 10px;
+}
+.rightBox ul li a p {}
+
+
+
+
+
+/***** mainRow3 *****/
+
+.mainRow3 {
+    padding: 30px 0;
+}
+.mainRow3 div {
+    width: 235px;
+    height: 235px;
+    background: gray;
+    margin-left: 20px;
+    float: left;
+    
+    text-align: center;
+}
+
+.mainRow3 div:first-child {
+    margin-left: 0;
+}
+
+.mainRow3 div.row3Box1 {
+    background: url(../images/mainrow3_img1.jpg) no-repeat;
+    background-size: 100% 100%;
+}
+.mainRow3 div.row3Box2 {
+    background: url(../images/mainrow3_img2.jpg) no-repeat;
+    background-size: 100% 100%;
+}
+
+.mainRow3 div.row3Box2 h5 {
+    color: black;
+}
+.mainRow3 div.row3Box3 {
+    background: url(../images/mainrow3_img3.jpg) no-repeat;
+    background-size: 100% 100%;
+}
+
+.mainRow3 div.row3Box4 {
+    background: #f2f0ed;
+}
+
+.mainRow3 div a {
+    height: 100%;
+    display: block;
+    color: white;
+}
+.mainRow3 .row3Box4 a{
+	height: 0;
+}
+
+.mainRow3 div a:hover {
+    background: rgba(45, 91, 121, 0.7);
+}
+
+.mainRow3 div a:hover h5 {
+    color: white;
+}
+
+.mainRow3 div a:hover p {
+    display: block;
+}
+
+.mainRow3 div a h5 {
+    padding-top: 80px;
+    font-size: 18px;
+}
+.mainRow3 div a p {
+    font-size: 14px;
+    margin-top: 10px;
+    display: none;
+}
+
+
+.row3Box4 {
+    padding: 20px;
+    box-sizing: border-box;
+}
+.row3Box4 h5 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+.row3Box4 select, .row3Box4 input {
+    width: 100%; /* padding값을 제외한 100% 길이*/
+    height: 40px;
+    border: 0;
+    margin-top: 10px;
+    background: white;
+    
+    text-indent: 10px;
+    -webkit-appearance: none;
+    /* chrome, safari에 적용되는 기본 값을 제거 -> select box의 화살표 제거 */   
+}
+
+.row3Box4 select {
+    background: url(../images/select_arrow.png) no-repeat;
+    background-color: white;
+    background-size: 10px;
+    background-position: 95% center;
+    margin: 0;
+}
+
+.row3Box4 select::-ms-expand {
+    display: none;
+}
+
+.row3Box4 button {
+    width: 100%;
+    height: 40px;
+    border: 0;
+    background: #2d5b79;
+    color: white;
+    margin-top: 20px;
+    cursor: pointer; /* 마우스 오버 시 pointer로 변경 -> <button>은 <a>처럼 cursor가 변경되지 않음 */
+}
+
+
+
+
+/***** mainRow4 *****/
+
+.mainRow4 {}
+.row4Box {
+    width: 490px;
+    height: 167px;
+    margin-left: 20px;
+    float: left;
+    background: #f2f0ed;
+    position: relative;
+}
+
+.row4Box.notice {
+    margin-left: 0;
+}
+.row4Box.notice .min,.row4Box.news .min{
+	display: none;
+}
+.row4Box h2 {
+    text-align: center;
+    font-size: 20px;
+    color: #2d5b79;
+    padding: 15px;
+    border-bottom: 1px solid white;
+}
+.row4Box .moreBtn {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    
+    background-color: white;
+    background-image: url(../images/sp_com.png);
+    background-repeat: no-repeat;
+    background-position: -199px -63px;
+    
+    text-indent: -9999px;
+}
+
+.row4Box .moreBtn a {
+    height: 100%;
+    display: block;
+}
+
+.notice .box {
+    width: 50%;
+    padding: 20px;
+    box-sizing: border-box;
+    float: left;
+    border-right: 1px solid white;
+    
+    font-size: 13px;
+}
+.notice .box:hover a{
+	text-decoration: underline;
+}
+
+.notice .box:last-child {
+    border-right: 0;
+}
+
+.notice .box p {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.notice .box p a {}
+.notice .box span {
+    display: block; /* <span>은 inline요소이므로 padding값 적용을 위해 block으로 변경 */
+    padding: 10px 0;
+    
+    font-size: 11px;
+}
+.notice .box span a {
+    color: gray;
+}
+
+.news ul {
+    font-size: 13px;
+}
+.news ul li {
+    line-height: 35px;
+    border-bottom: 1px solid white;
+}
+
+.news ul li:last-child {
+    border-bottom: 0;
+}
+
+.news ul li a {
+    display: inline-block;
+    width: 390px;
+    overflow : hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: top;
+    
+    text-indent: 20px;
+}
+.news ul li a:hover{
+	text-decoration: underline;
+}
+
+.mMainRow4{
+	display: none;
+}
+
+
+
+/***** mainRow5 *****/
+.mainRow5 {
+    margin-top: 50px;
+    padding: 50px 0;
+    background: url(../images/mainrow5_bg.jpg) no-repeat;
+}
+.mainRow5 ul {}
+.mainRow5 ul li {
+    width: 235px;
+    height: 327px;
+    margin-left: 20px;
+    float: left;
+    
+    text-align: center;
+}
+
+.mainRow5 ul li:first-child {
+    margin-left: 0;
+    background: url(../images/mainrow5_img1.jpg);
+    background-size: 100% 100%;
+}
+.mainRow5 ul li:nth-child(2) {
+    background: url(../images/mainrow5_img2.jpg);
+    background-size: 100% 100%;
+}
+.mainRow5 ul li:nth-child(3) {
+    background: url(../images/mainrow5_img3.jpg);
+    background-size: 100% 100%;
+}
+.mainRow5 ul li:last-child {
+    background: url(../images/mainrow5_img4.jpg);
+    background-size: 100% 100%;
+}
+
+.mainRow5 ul li a {
+    display: block;
+    height: 100%;
+    font-size: 12px;
+}
+.mainRow5 ul li a span {
+    display: block; /* inline요소 -> block; 문자열 2 줄로 만들기 위해 */
+    font-size: 20px;
+    font-weight: bold;
+    
+    padding-top: 250px;
+}
+
+
+
+
+/*************************
+        footer
+**************************/
+
+#footer {
+    background: #4c5459;
+    color: white;
+}
+
+.footerTop {
+    padding: 10px 0;
+    background: #383f43;
+}
+.footerTop ul {
+    float: left;
+}
+.footerTop ul li {
+    float: left;
+    
+    font-size: 12px;
+    line-height: 40px;
+}
+
+.footerTop ul li:after {
+    content: "｜";
+    display: inline-block;
+    color: gray;
+}
+
+.footerTop ul li:last-child:after {
+    display: none;
+}
+
+.footerTop ul li a {
+    color: white;
+}
+.footerTop ul li a:hover{
+	text-decoration: underline;
+}
+.footerTop .topRight {
+    float: right;
+}
+.footerTop .topRight div {
+    height: 40px;
+    line-height: 40px;
+    float: left;    
+    background: #2a3033;
+    padding: 0 15px;
+}
+.footerTop .topRight div:last-child {
+    background: none;
+    padding-right: 0;
+    padding-left: 10px;
+}
+
+.footerTop .topRight div span {
+    font-size: 14px;
+    font-weight: bold;
+    vertical-align: middle;
+}
+.footerTop .topRight div span.number {
+    font-size: 23px;
+    font-weight: normal;
+}
+.footerTop .topRight div select {
+    width: 200px;
+    height: 40px;
+    border: 0;
+    text-indent: 10px;
+    -webkit-appearance: none;
+    
+    background: url(../images/select_arrow.png) no-repeat;
+    background-color: white;
+    background-size: 10px;
+    background-position: 95% center;
+    
+    display: block;
+}
+
+.footerTop .topRight div select::-ms-expand {
+    display: none;
+}
+
+.footerBottom {
+    text-align: center;
+    padding: 50px 0;
+}
+.footerBottom h1 {
+    width: 130px;
+    height: 50px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    
+    background: url(../images/sp_com.png) no-repeat;
+    background-position: -150px 0;
+    
+    text-indent: -9999px;
+}
+.footerBottom address {
+    font-size: 12px;
+    font-style: normal;
+}
+.footerBottom address span {}
+.footerBottom address span:before {
+    content: "";
+    display: inline-block;
+    width: 1px;
+    height: 8px;
+    margin: 0 5px;
+    background: white;
+}
+.footerBottom address span:first-child:before {
+    display: none;
+}
+
+.footerBottom p {
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+
+
+
+/*************미디어*************/
+
+@media screen and (max-width:768px) {
+	body{
+		min-width:auto;
+	}
+	.w1000{
+		width:auto;
+	}
+	#header{
+		width:auto;
+		padding: 15px;
+		box-sizing: border-box;
+	}
+	#header h1{
+		position: static;
+		background-size:400px 400px;
+		background-position: 0 0;
+		width:70px;
+		height:30px;
+	}
+	.gnb,.utill{
+		display: none;
+	}
+	.panel{
+		position: absolute;
+		top:50%;
+		margin-top:-8px;
+		right: 15px;
+	}
+	.panel a{}
+	.panel a:before,.panel a:after{
+		content: "";
+		display: block;
+		width:30px;
+		height:2px;
+		background: #000;
+	}
+	.panel a span{
+		width:30px;
+		height:2px;
+		background: #000;
+		display: block;
+		margin: 5px 0;
+	}
+	#mainSlider{
+		width:100%;
+		height: 370px;
+		overflow: hidden;
+		position: relative;
+	}
+	#mainSlider img{
+		position: absolute;
+		width:1000px;
+		left: 50%;
+		margin-left: -500px;
+	}
+	.sliderBtn div.prevBtn{
+		background-position: -64px -30px;
+	}
+	.sliderBtn div.nextBtn{
+		background-position: -79px -30px;
+	}
+	.sliderBtn div{
+		width:13px;
+		height:23px;
+		background-size:400px 400px;
+	}
+	
+	
+	/**mainrow1**/
+	.mainRow1{
+		padding-bottom: 0;
+	}
+	.mainRow1 ul li{
+		width:33.333333%;
+		margin-bottom:30px;
+	}
+	.mainRow1 ul li a span{
+		width:33px;
+		height:26px;
+		background-size:400px 400px;
+	}
+	
+	.row2Box .sliderBtn .nextBtn{
+		right: 0;
+	}
+	.mainRow1 .icon1{
+		background-position: -1px -59px;
+	}
+	.mainRow1 .icon2{
+		background-position: -37px -61px;
+	}
+	.mainRow1 .icon3{
+		background-position: -73px -59px;
+	}
+	.mainRow1 .icon4{
+		background-position: -109px -59px;
+	}
+	.mainRow1 .icon5{
+		background-position: -145px -59px;
+	}
+	.mainRow1 .icon6{
+		background-position: -182px -59px;
+	}
+	
+	
+	/*mainRow2*/
+	.mainRow2{
+		display: none;
+	}
+	
+	/*mainRow3*/
+	.mainRow3{
+		width:calc(100% - 20px) ;
+	}
+	
+	.mainRow3 div{
+		width:calc( 50% - 5px ) ;
+		height:auto;
+		margin-left: 10px;
+		margin-bottom: 10px;
+	}
+	.mainRow3 div a h5{
+		padding: 43% 0;
+		font-size:14px;
+	}
+	.mainRow3 div.row3Box3{
+		margin-left: 0;
+	}
+	.mainRow3 div a:hover{
+		background-color:rgba(0,0,0,0)
+	}
+	.mainRow3 div a:hover p{
+		display: none;
+	}
+	.mainRow3 div a{
+		color:#fff;
+	}
+	.mainRow3 div.row3Box2 a:hover h5{
+		color:#000;
+	}
+	.mainRow3 div.row3Box4{
+		padding: 0px;
+		background:url(../images/mainrow3_img1.jpg) no-repeat;
+		background-size:100% 100%;
+	}
+	.mainRow3 .row3Box4 a{
+		display: block;
+	}
+	.mainRow3 div.row3Box4 h5{
+		font-size:14px;
+		color:#fff;
+		padding: 43% 0;
+		margin-bottom: 0px;
+	}
+	/*mainRow4*/
+	.mainRow4{
+		display: none;
+	}
+	.row3Box4 select,.row3Box4 input,.row3Box4 button{
+		display: none;
+		
+	}
+	.mMainRow4 {
+		display: block;
+    	padding: 0 10px;
+	}
+	.notice, .news {
+		padding: 10px 0;
+		margin-bottom: 10px;
+
+		background: #f2f0ed;
+
+		font-size: 14px;
+	}
+	.mMainRow4 .title {
+		width: 20%;
+		float: left;
+
+		font-weight: bold;
+		color: #2d5b79;
+		text-align: center;
+	}
+	.mMainRow4 .con {
+		width: 80%;
+		padding-right: 20px;
+		box-sizing: border-box;
+		float: left;
+
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+	
+	/*mainRow5*/
+	.mainRow5 ul{
+		width:calc(100% - 20px);
+		margin: 0 auto;
+	}
+	.mainRow5 ul li{
+		width:calc(50% - 5px);
+		margin-left: 10px;	
+		margin-bottom: 10px;
+		height: auto;
+	}
+
+	.mainRow5 ul li:nth-child(3){
+		margin-left: 0;
+	}
+	.mainRow5 ul li a{
+		font-size:0;
+	}
+	.mainRow5 ul li a span{
+		padding-top: 80%;
+		padding-bottom: 20%;
+		font-size:14px;
+	}
+	
+	.footerTop ul{
+		float:none;
+		font-size:0;
+		text-align: center;
+		width:250px;
+		margin: 0 auto;
+		margin-bottom: 
+	}
+	.footerTop ul li{
+		float:none;
+		display: inline-block;
+		font-size:13px;
+		line-height: 30px;
+	}
+	.footerTop .topRigh{
+		float: none;
+		text-align: center;
+		font-size:0;
+	}
+	.footerTop .topRight div span{
+		font-size:12px;
+	}
+	.footerTop .topRight div span.number{
+		margin-left: 5px;
+		font-size:14px;
+	}
+	.footerTop .topRight{
+		float: none;
+		text-align: center;
+		font-size:0px;
+		margin: 15px 0;
+	}
+	.footerTop .topRight div{
+		float:none;
+		width:40%;
+		display: inline-block;
+		vertical-align: top;
+		
+	}
+	.footerTop .topRight div:nth-child(1){
+		padding: 0;
+	}
+	.footerTop .topRight div select{
+		width:100%;
+
+	}
+	.footerBottom address,.footerBottom h1{
+		display: none;
+	}
+	.footerBottom{
+		padding: 20px;
+	}
+	.footerBottom p{
+		margin-top: 0;
+	}
+}
+
+
+
+
+
+
+
+
+
+
