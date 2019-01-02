@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
+		<title>어린이 미술관</title>
+		<link rel="stylesheet" type="text/css" href="../css/slick.css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">	
+		<link rel="stylesheet" type="text/css" href="../busanArtMuseum/css/sub02.css"/>		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		<script src="../js/slick.min.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			$(function(){
+				$('.openBtn').click(function(){
+						$('.closeBtn').css('z-index','1')
+						$('.openBtn').css('z-index','0')
+					})
+				});
+				$(function(){
+					$('.closeBtn').click(function(){
+						$('.openBtn').css('z-index','1')
+						$('.closeBtn').css('z-index','0')
+					})
+				});
+
+			
+			( function( $ ) {
+				$( document ).ready(function() {
+					$('#cssmenu li.has-sub>a').on('click', function(){
+						$(this).removeAttr('href');
+						var element = $(this).parent('li');
+						if (element.hasClass('open')) {
+							element.removeClass('open');
+							element.find('li').removeClass('open');
+							element.find('ul').slideUp();
+						}
+						else {
+							element.addClass('open');
+							element.children('ul').slideDown();
+							element.siblings('li').children('ul').slideUp();
+							element.siblings('li').removeClass('open');
+							element.siblings('li').find('li').removeClass('open');
+							element.siblings('li').find('ul').slideUp();
+						}
+					});
+
+					$('#cssmenu>ul>li.has-sub>a').append('<span class="holder"></span>');
+
+					(function getColor() {
+						var r, g, b;
+						var textColor = $('#cssmenu').css('color');
+						textColor = textColor.slice(4);
+						r = textColor.slice(0, textColor.indexOf(','));
+						textColor = textColor.slice(textColor.indexOf(' ') + 1);
+						g = textColor.slice(0, textColor.indexOf(','));
+						textColor = textColor.slice(textColor.indexOf(' ') + 1);
+						b = textColor.slice(0, textColor.indexOf(')'));
+						var l = rgbToHsl(r, g, b);
+						if (l > 0.7) {
+							$('#cssmenu>ul>li>a').css('text-shadow', '0 1px 1px rgba(0, 0, 0, .35)');
+							$('#cssmenu>ul>li>a>span').css('border-color', 'rgba(0, 0, 0, .35)');
+						}
+						else
+						{
+							$('#cssmenu>ul>li>a').css('text-shadow', '0 1px 0 rgba(255, 255, 255, .35)');
+							$('#cssmenu>ul>li>a>span').css('border-color', 'rgba(255, 255, 255, .35)');
+						}
+					})();
+
+					function rgbToHsl(r, g, b) {
+						r /= 255, g /= 255, b /= 255;
+						var max = Math.max(r, g, b), min = Math.min(r, g, b);
+						var h, s, l = (max + min) / 2;
+
+						if(max == min){
+							h = s = 0;
+						}
+						else {
+							var d = max - min;
+							s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+							switch(max){
+								case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+								case g: h = (b - r) / d + 2; break;
+								case b: h = (r - g) / d + 4; break;
+							}
+							h /= 6;
+						}
+						return l;
+					}
+				});
+			} )( jQuery );
+			
+			
+			function openNav() {
+				document.getElementById("mySidenav").style.width = "80%";
+				document.getElementById("main").style.width = "100%";
+				document.getElementById("main").style.marginLeft = "-80%"			
+			}
+
+			function closeNav() {
+				document.getElementById("mySidenav").style.width = "0";
+				document.getElementById("main").style.marginLeft= "0";
+			}
+
+
+			$(document).ready(function() {
+				$('.slick1').slick({
+				slidesToShow: 1,
+				autoplay:true,
+				prevArrow:'<i class="fas fa-angle-left"></i>',
+				nextArrow:'<i class="fas fa-angle-right"></i>',
+				autoplaySpeed:2000,
+			});
+		});
+		
+		function goBack() {
+				window.history.back();
+			}
+		</script>
+		
+	</head>
+	<body>
+		<div id="wrap">
+			<div id="mySidenav" class="sidenav">
+				<div class="menuHeader">
+					<p>전체 메뉴</p>
+					<div class="setting">
+						<a href="#"></a>
+					</div>
+				</div>
+				<div class="menuBody">
+					<div class="search">
+						<p>필요한 정보를 검색하세요.</p>
+						<div class="glass">
+							<a href="#"></a>
+						</div>
+					</div>
+					<div id='cssmenu'>
+						<ul>
+							<li class='active has-sub'>
+								<a href='#'>
+									<span>전시</span>
+								</a>
+								<ul>
+									<li class='has-sub'>
+										<a href='#'>
+											<span>현재 전시</span>
+										</a>
+									</li>
+									<li class='has-sub'>
+										<a href='#'>
+											<span>지난 전시</span>
+										</a>
+									</li>
+									<li class='has-sub'>
+										<a href='#'>
+											<span>전시 예정</span>
+										</a>
+									</li>
+									<li class='has-sub'>
+										<a href='#'>
+											<span>대관 전시</span>
+										</a>
+									</li>
+									<li class='has-sub'>
+										<a href='#'>
+											<span>연간 전시 계획</span>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li class='active has-sub'>
+								<a href='#'>
+									<span>교육 및 행사</span>
+								</a>
+								<ul>
+									<li class='has-sub'>
+										<a href='#'>
+											<span>현재 전시</span>
+										</a>
+									</li>
+									<li class='has-sub'>
+										<a href='#'>
+											<span>지난 전시</span>
+										</a>
+									</li>
+									<li class='has-sub'>
+										<a href='#'>
+											<span>전시 예정</span>
+										</a>
+									</li>
+									<li class='has-sub'>
+										<a href='#'>
+											<span>대관 전시</span>
+										</a>
+									</li>
+									<li class='has-sub'>
+										<a href='#'>
+											<span>연간 전시 계획</span>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li class='active has-sub'>
+								<a href='#'>
+									<span>어린이 미술관</span>
+								</a>
+								<ul>
+									<li class='has-sub'>
+										<a href='#'>
+											<span>현재 전시</span>
+										</a>
+									</li>
+									<li class='has-sub'>
+										<a href='#'>
+											<span>지난 전시</span>
+										</a>
+									</li>
+									<li class='has-sub'>
+										<a href='#'>
+											<span>전시 예정</span>
+										</a>
+									</li>
+									<li class='has-sub'>
+										<a href='#'>
+											<span>대관 전시</span>
+										</a>
+									</li>
+									<li class='has-sub'>
+										<a href='#'>
+											<span>연간 전시 계획</span>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li class='active has-sub'>
+								<a href='#'>
+									<span>소장품</span>
+								</a>
+								<ul>
+									<li class='has-sub'>
+										<a href='#'>
+											<span>현재 전시</span>
+										</a>
+									</li>
+									<li class='has-sub'>
+										<a href='#'>
+											<span>지난 전시</span>
+										</a>
+									</li>
+									<li class='has-sub'>
+										<a href='#'>
+											<span>전시 예정</span>
+										</a>
+									</li>
+									<li class='has-sub'>
+										<a href='#'>
+											<span>대관 전시</span>
+										</a>
+									</li>
+									<li class='has-sub'>
+										<a href='#'>
+											<span>연간 전시 계획</span>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li class='active has-sub'>
+								<a href='#'>
+									<span>오시는 길</span>
+								</a>
+								<ul>
+									<li class='has-sub'>
+										<a href='#'>
+											<span>현재 전시</span>
+										</a>
+									</li>
+									<li class='has-sub'>
+										<a href='#'>
+											<span>지난 전시</span>
+										</a>
+									</li>
+									<li class='has-sub'>
+										<a href='#'>
+											<span>전시 예정</span>
+										</a>
+									</li>
+									<li class='has-sub'>
+										<a href='#'>
+											<span>대관 전시</span>
+										</a>
+									</li>
+									<li class='has-sub'>
+										<a href='#'>
+											<span>연간 전시 계획</span>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li class='active has-sub'>
+								<a href='#'>
+									<span>미술관 소개</span>
+								</a>
+								<ul>
+									<li class='has-sub'>
+										<a href='#'>
+											<span>현재 전시</span>
+										</a>
+									</li>
+									<li class='has-sub'>
+										<a href='#'>
+											<span>지난 전시</span>
+										</a>
+									</li>
+									<li class='has-sub'>
+										<a href='#'>
+											<span>전시 예정</span>
+										</a>
+									</li>
+									<li class='has-sub'>
+										<a href='#'>
+											<span>대관 전시</span>
+										</a>
+									</li>
+									<li class='has-sub'>
+										<a href='#'>
+											<span>연간 전시 계획</span>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li class='active has-sub'>
+								<a href='#'>
+									<span>전자 도서관</span>
+								</a>
+								<ul>
+									<li class='has-sub'>
+										<a href='#'>
+											<span>현재 전시</span>
+										</a>
+									</li>
+									<li class='has-sub'>
+										<a href='#'>
+											<span>지난 전시</span>
+										</a>
+									</li>
+									<li class='has-sub'>
+										<a href='#'>
+											<span>전시 예정</span>
+										</a>
+									</li>
+									<li class='has-sub'>
+										<a href='#'>
+											<span>대관 전시</span>
+										</a>
+									</li>
+									<li class='has-sub'>
+										<a href='#'>
+											<span>연간 전시 계획</span>
+										</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div id="main">
+				<div id="header">
+					<div class="back">
+						<button onclick="goBack()"></button>
+					</div>
+					<h1>
+						<a href="index.html"></a>
+					</h1>
+					<div class="menuBtn openBtn" class="closebtn" onclick="openNav()">
+						<a href="#">
+						</a>
+					</div>
+					<div class="menuBtn closeBtn">
+						<a href="javascript:void(0)" class="closebtn" onclick="closeNav()"></a>
+					</div>
+				</div>
+				<div id="container">
+					<div class="title">
+						<p>어린이 미술관</p>
+					</div>
+					<div class="banner slick1">
+						<div class="text">
+							<p>어린이 미술관<span>은</span></p>
+							<span>어린이들이 능동적으로 미술관을<br/>경험하고 감상체험,<br/>표현활동을 통하여 창조적 사고와<br/>시각을 기르는 전시 교육공간입니다.</span>
+						</div>
+						<div class="text">
+							<p>어린이 미술관<span>은</span></p>
+							<span>어린이들이 능동적으로 미술관을<br/>경험하고 감상체험,<br/>표현활동을 통하여 창조적 사고와<br/>시각을 기르는 전시 교육공간입니다.</span>
+						</div>
+						<div class="text">
+							<p>어린이 미술관<span>은</span></p>
+							<span>어린이들이 능동적으로 미술관을<br/>경험하고 감상체험,<br/>표현활동을 통하여 창조적 사고와<br/>시각을 기르는 전시 교육공간입니다.</span>
+						</div>
+					</div>
+				</div>
+				<div id="mainRow1">
+					<div class="arrowBtn"></div>
+					<p>어린이 미술관 관람안내</p>
+					<dl>
+						<dt class="spell4">관람시간</dt>
+						<dd>: 화 ~ 일, 오전 10시 ~ 오후 6시</dd>
+					</dl>
+					<dl>
+						<dt class="spell2">장소</dt>
+						<dd>: 부산시립미술관 지하 1층</dd>
+					</dl>
+					<dl>
+						<dt class="spell3">관람료</dt>
+						<dd>: 무료</dd>
+					</dl>
+					<dl>
+						<dt class="spell3">휴관일</dt>
+						<dd>: 1월 1일, 매주 월요일</dd>
+					</dl>
+					<p class="information">
+						&#40;단, 월요일이 공휴일인 경우 그 다음날을 휴관일로 함&#41;
+					</p>
+					<dl>
+						<dt class="spell4">문의전화</dt>
+						<dd>: 051-740-4205</dd>
+					</dl>
+					<dl>
+						<dt class="dots">&#9679; </dt>
+						<dd>교육프로그램 안내는 어린이 미술관 교육란을<br/>참고해 주시기 바랍니다.</dd>
+					</dl>
+					<dl>
+						<dt class="dots">&#9679; </dt>
+						<dd>전시준비기간에는 휴관이오니 홈페이지를 통해<br/>관람 가능 기간을 꼭 확인해주시기 바랍니다.</dd>
+					</dl>
+					<dl>
+						<dt class="dots">&#9679; </dt>
+						<dd>공간이 협소한 관계로 적정인원 초과시 전시실<br/>출입이제한될 수 있습니다.</dd>
+					</dl>
+					<div class="arrowBtn"></div>
+					<p>어린이 미술관 단체 관람안내</p>
+					<div class="innerMap"></div>
+				</div>
+				<div id="footer">
+					<div>
+						<ul class="cf">
+							<li>
+								<a href="#"></a>
+								<p>전시</p>
+							</li>
+							<li>
+								<a href="sub03.html"></a>
+								<p>오시는 길</p>
+							</li>
+							<li>
+								<a href="sub01.html"></a>
+								<p>이우환 공간</p>
+							</li>
+							<li>
+								<a href="#"></a>
+								<p>미술관 소개</p>
+							</li>
+							<li>
+								<a href="sub04.html"></a>
+								<p>전자 도서관</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

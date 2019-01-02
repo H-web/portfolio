@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
+		<title>전자 도서관</title>
+		<link rel="stylesheet" type="text/css" href="../css/slick.css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">	
+		<link rel="stylesheet" type="text/css" href="../busanArtMuseum/css/sub04.css"/>		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		<script src="../js/slick.min.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			$(function(){
+				$('.openBtn').click(function(){
+						$('.closeBtn').css('z-index','1')
+						$('.openBtn').css('z-index','0')
+					})
+				});
+				$(function(){
+					$('.closeBtn').click(function(){
+						$('.openBtn').css('z-index','1')
+						$('.closeBtn').css('z-index','0')
+					})
+				});
+	
+			
+			( function( $ ) {
+				$( document ).ready(function() {
+					$('#cssmenu li.has-sub>a').on('click', function(){
+						$(this).removeAttr('href');
+						var element = $(this).parent('li');
+						if (element.hasClass('open')) {
+							element.removeClass('open');
+							element.find('li').removeClass('open');
+							element.find('ul').slideUp();
+						}
+						else {
+							element.addClass('open');
+							element.children('ul').slideDown();
+							element.siblings('li').children('ul').slideUp();
+							element.siblings('li').removeClass('open');
+							element.siblings('li').find('li').removeClass('open');
+							element.siblings('li').find('ul').slideUp();
+						}
+					});
+
+					$('#cssmenu>ul>li.has-sub>a').append('<span class="holder"></span>');
+
+					(function getColor() {
+						var r, g, b;
+						var textColor = $('#cssmenu').css('color');
+						textColor = textColor.slice(4);
+						r = textColor.slice(0, textColor.indexOf(','));
+						textColor = textColor.slice(textColor.indexOf(' ') + 1);
+						g = textColor.slice(0, textColor.indexOf(','));
+						textColor = textColor.slice(textColor.indexOf(' ') + 1);
+						b = textColor.slice(0, textColor.indexOf(')'));
+						var l = rgbToHsl(r, g, b);
+						if (l > 0.7) {
+							$('#cssmenu>ul>li>a').css('text-shadow', '0 1px 1px rgba(0, 0, 0, .35)');
+							$('#cssmenu>ul>li>a>span').css('border-color', 'rgba(0, 0, 0, .35)');
+						}
+						else
+						{
+							$('#cssmenu>ul>li>a').css('text-shadow', '0 1px 0 rgba(255, 255, 255, .35)');
+							$('#cssmenu>ul>li>a>span').css('border-color', 'rgba(255, 255, 255, .35)');
+						}
+					})();
+
+					function rgbToHsl(r, g, b) {
+						r /= 255, g /= 255, b /= 255;
+						var max = Math.max(r, g, b), min = Math.min(r, g, b);
+						var h, s, l = (max + min) / 2;
+
+						if(max == min){
+							h = s = 0;
+						}
+						else {
+							var d = max - min;
+							s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+							switch(max){
+								case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+								case g: h = (b - r) / d + 2; break;
+								case b: h = (r - g) / d + 4; break;
+							}
+							h /= 6;
+						}
+						return l;
+					}
+				});
+			} )( jQuery );
+	
+			
+			function openNav() {
+				document.getElementById("mySidenav").style.width = "80%";
+				document.getElementById("main").style.width = "100%";
+				document.getElementById("main").style.marginLeft = "-80%"			
+			}
+
+			function closeNav() {
+				document.getElementById("mySidenav").style.width = "0";
+				document.getElementById("main").style.marginLeft= "0";
+			}
+			
+			function goBack() {
+				window.history.back();
+			}
+		</script>
+	</head>
+	<body>
+		<div id="wrap">
+			<div id="mySidenav" class="sidenav">
+				<div class="menuHeader">
+					<p>전체 메뉴</p>
+					<div class="setting">
+						<a href="#"></a>
+					</div>
+				</div>
+				<div class="menuBody">
+					<div class="search">
+						<p>필요한 정보를 검색하세요.</p>
+						<div class="glass">
+							<a href="#"></a>
+						</div>
+					</div>
+					<div id='cssmenu'>
+						<ul>
+							<li class='active has-sub'>
+								<a href='#'>
+									<span>전시</span>
+								</a>
+								<ul>
+									<li class='has-sub'>
+										<a href='#'>
+											<span>현재 전시</span>
+										</a>
+									</li>
+									<li class='has-sub'>
+										<a href='#'>
+											<span>지난 전시</span>
+										</a>
+									</li>
+									<li class='has-sub'>
+										<a href='#'>
+											<span>전시 예정</span>
+										</a>
+									</li>
+									<li class='has-sub'>
+										<a href='#'>
+											<span>대관 전시</span>
+										</a>
+									</li>
+									<li class='has-sub'>
+										<a href='#'>
+											<span>연간 전시 계획</span>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li class='active has-sub'>
+								<a href='#'>
+									<span>교육 및 행사</span>
+								</a>
+								<ul>
+									<li class='has-sub'>
+										<a href='#'>
+											<span>현재 전시</span>
+										</a>
+									</li>
+									<li class='has-sub'>
+										<a href='#'>
+											<span>지난 전시</span>
+										</a>
+									</li>
+									<li class='has-sub'>
+										<a href='#'>
+											<span>전시 예정</span>
+										</a>
+									</li>
+									<li class='has-sub'>
+										<a href='#'>
+											<span>대관 전시</span>
+										</a>
+									</li>
+									<li class='has-sub'>
+										<a href='#'>
+											<span>연간 전시 계획</span>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li class='active has-sub'>
+								<a href='#'>
+									<span>어린이 미술관</span>
+								</a>
+								<ul>
+									<li class='has-sub'>
+										<a href='#'>
+											<span>현재 전시</span>
+										</a>
+									</li>
+									<li class='has-sub'>
+										<a href='#'>
+											<span>지난 전시</span>
+										</a>
+									</li>
+									<li class='has-sub'>
+										<a href='#'>
+											<span>전시 예정</span>
+										</a>
+									</li>
+									<li class='has-sub'>
+										<a href='#'>
+											<span>대관 전시</span>
+										</a>
+									</li>
+									<li class='has-sub'>
+										<a href='#'>
+											<span>연간 전시 계획</span>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li class='active has-sub'>
+								<a href='#'>
+									<span>소장품</span>
+								</a>
+								<ul>
+									<li class='has-sub'>
+										<a href='#'>
+											<span>현재 전시</span>
+										</a>
+									</li>
+									<li class='has-sub'>
+										<a href='#'>
+											<span>지난 전시</span>
+										</a>
+									</li>
+									<li class='has-sub'>
+										<a href='#'>
+											<span>전시 예정</span>
+										</a>
+									</li>
+									<li class='has-sub'>
+										<a href='#'>
+											<span>대관 전시</span>
+										</a>
+									</li>
+									<li class='has-sub'>
+										<a href='#'>
+											<span>연간 전시 계획</span>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li class='active has-sub'>
+								<a href='#'>
+									<span>오시는 길</span>
+								</a>
+								<ul>
+									<li class='has-sub'>
+										<a href='#'>
+											<span>현재 전시</span>
+										</a>
+									</li>
+									<li class='has-sub'>
+										<a href='#'>
+											<span>지난 전시</span>
+										</a>
+									</li>
+									<li class='has-sub'>
+										<a href='#'>
+											<span>전시 예정</span>
+										</a>
+									</li>
+									<li class='has-sub'>
+										<a href='#'>
+											<span>대관 전시</span>
+										</a>
+									</li>
+									<li class='has-sub'>
+										<a href='#'>
+											<span>연간 전시 계획</span>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li class='active has-sub'>
+								<a href='#'>
+									<span>미술관 소개</span>
+								</a>
+								<ul>
+									<li class='has-sub'>
+										<a href='#'>
+											<span>현재 전시</span>
+										</a>
+									</li>
+									<li class='has-sub'>
+										<a href='#'>
+											<span>지난 전시</span>
+										</a>
+									</li>
+									<li class='has-sub'>
+										<a href='#'>
+											<span>전시 예정</span>
+										</a>
+									</li>
+									<li class='has-sub'>
+										<a href='#'>
+											<span>대관 전시</span>
+										</a>
+									</li>
+									<li class='has-sub'>
+										<a href='#'>
+											<span>연간 전시 계획</span>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li class='active has-sub'>
+								<a href='#'>
+									<span>전자 도서관</span>
+								</a>
+								<ul>
+									<li class='has-sub'>
+										<a href='#'>
+											<span>현재 전시</span>
+										</a>
+									</li>
+									<li class='has-sub'>
+										<a href='#'>
+											<span>지난 전시</span>
+										</a>
+									</li>
+									<li class='has-sub'>
+										<a href='#'>
+											<span>전시 예정</span>
+										</a>
+									</li>
+									<li class='has-sub'>
+										<a href='#'>
+											<span>대관 전시</span>
+										</a>
+									</li>
+									<li class='has-sub'>
+										<a href='#'>
+											<span>연간 전시 계획</span>
+										</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div id="main">
+				<div id="header">
+					<div class="back">
+							<button onclick="goBack()"></button>
+						</div>
+					<h1>
+						<a href="index.html"></a>
+					</h1>
+					<div class="menuBtn openBtn" class="closebtn" onclick="openNav()">
+						<a href="#">
+						</a>
+					</div>
+					<div class="menuBtn closeBtn">
+						<a href="javascript:void(0)" class="closebtn" onclick="closeNav()"></a>
+					</div>
+				</div>
+				<div id="container">
+					<div class="title">
+						<p>전자 도서관</p>
+					</div>
+				</div>
+				<div class="mainRow1 cf">
+					<span class="bestTitle">베스트 자료</span>
+					<div class="bestWork">
+						<div class="workGroup1">
+							<div class="book1"></div>
+						</div>
+						
+						<div class="workGroup2">
+							<div class="book2"></div>
+						</div>
+					</div>
+					<div class="text">
+						<p>미술작품을 곁들인 에피소드드드드
+							<span>차기태</span></p>
+						<p>그레고 씨의 일요일
+							<span>조성민</span></p>
+					</div>
+				</div>
+				<div class="mainRow2 cf">
+					<input type="radio" name="ra" checked=checked>전체도서 <input type="radio" name="ra">대출가능도서
+					<div class="cheakBox">
+						<div class="cheakBox1">
+							<div class="bigger">
+								<div class="smaller"></div>
+							</div>
+							
+							<p>전체도서</p>
+						</div>
+						<div class="cheakBox2">
+							<div class="bigger2"></div>
+							<p>대출가능도서</p>
+						</div>
+					</div>
+					<div class="more">
+						<select>
+							<optgroup label="전체">
+								<option value="전체순">전체순</option>	
+								<option value="최신">최신순</option>	
+								<option value="인기순">인기순</option>	
+								<option value="가나다순">가나다순</option>		
+							</optgroup>
+						</select>
+						<span class="moreBtn"></span>
+					</div>
+					<div class="category">카테고리</div>
+					<div class="alertMore">
+						<div class="alert">
+						 <p>전체 도서에는 '<span>533</span>개'의 자료가 있습니다.</p>
+						</div>
+						<div class="more2"><a href="#">더보기</a></div>
+					</div>
+				</div>
+				<div class="mainRow3">
+					<div class="work1">
+						<div class="workGroup3">
+							<div class="book3"></div>
+						</div>
+						<div class="workGroup4">
+							<div class="book4"></div>
+						</div>
+						
+					</div>
+					<div class="text">
+						<p>발칙한 현대 미술사
+							<span>윌 곰퍼츠</span></p>
+						<p class="skills">드로잉의 기술(The Practice and Science of Drawing)
+							<span>해럴드 스피드</span></p>
+					</div>
+					<div class="work2">
+						<div class="workGroup5">
+							<div class="book5"></div>
+						</div>
+						<div class="workGroup6">
+							<div class="book6"></div>
+						</div>
+					</div>
+					<div class="text">
+						<p>처음 만드는 도자기 A to Z
+							<span>홍지은</span></p>
+						<p>램브란트, 빛의 화가
+							<span>타이펙스</span></p>
+					</div>
+				</div>
+				<div id="footer">
+					<div>
+						<ul class="cf">
+							<li>
+								<a href="#"></a>
+								<p>전시</p>
+							</li>
+							<li>
+								<a href="sub03.html"></a>
+								<p>오시는 길</p>
+							</li>
+							<li>
+								<a href="sub01.html"></a>
+								<p>이우환 공간</p>
+							</li>
+							<li>
+								<a href="#"></a>
+								<p>미술관 소개</p>
+							</li>
+							<li>
+								<a href="sub04.html"></a>
+								<p>전자 도서관</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
