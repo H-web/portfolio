@@ -1,0 +1,513 @@
+@charset "utf-8";
+@import url(https://fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+
+body{
+	font-family:'Noto Sans KR' ,'sans-serif';
+}
+body,h1,h2,h3,h4,p,ul,li,span,a{
+	padding: 0;
+	margin: 0;
+}
+a{
+	text-decoration: none;
+	color:black;
+}
+ul{
+	list-style: none;
+}
+.cf:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+.w1000{
+	width:1000px;
+	margin: 0 auto;
+}
+#wrap{}
+
+#main{
+	transition:all 0.5s;
+}
+#header{
+	width:100%;
+	height:50px;
+	background: #fff;
+	position: relative;
+	padding-top: 12.5px;
+	box-sizing:border-box;
+	
+}
+#header h1{
+	width: 120px;
+	height: auto;
+	background: url(../images/index/logo.png) no-repeat;
+	margin: 0 auto;
+	padding: 4% 0;
+}
+.menuBtn{
+	width:22px;
+	height: 19px;
+	background: url(../images/index/menu.png) no-repeat;
+	position: absolute;
+	top:15px;
+	right:10px;
+}
+.menuBtn a{
+	display: block;
+	height:100%;
+}
+
+
+#mySidenav{
+	width:0;
+	height: 100%;
+	position: absolute;
+	right:0;
+	top:0;
+	overflow:hidden;
+	transition:width 0.5s;
+}
+
+.openBtn{
+	z-index: 1;
+}
+
+#body{
+	width:100%;
+}
+#menu{
+	
+	
+}
+.menuHeader{
+	width:100%;
+	height:50px;
+	background: #585858;
+}
+.menuHeader p{
+	width:300px;
+	color:#fff;
+	text-align: center;
+	line-height: 57px;
+}
+.menuHeader .setting{
+	display: block;
+	width:22px;
+	height:22px;
+	background: url(../images/index/menu_icon_01.png) no-repeat;
+	position: absolute;
+	top:20px;
+	right:5px;
+	
+}
+.menuHeader .setting a{
+	display: block;
+	height: 100%;
+}
+.menuBody{
+	width:100%;
+	height: 917.25px;
+	background: url(../images/index/menu_patten.png);
+	box-shadow:inset 0px 0px 35px #000;
+	padding-top:20px;
+	box-sizing: border-box;
+}
+.menuBody .search{
+	display: block;
+	width:80%;
+	height: 30px;
+	background: #fff;
+	margin: 0 auto;
+	position: relative;
+	margin-bottom: 10px;
+}
+.menuBody .search p{
+	width:170px;
+	color:#787878;
+	font-size:15px;
+	line-height:30px;
+	margin-left: 5px;
+}
+.menuBody .search .glass{
+	width:17px;
+	height:18px;
+	background: url(../images/index/menu_icon_02.png) no-repeat;
+	position: absolute;
+	right:6px;
+	top:6px;
+}
+.menuBody .search .glass a{
+	
+}
+.menuText{
+	color:#fff;
+	width:400px;
+}
+.menuText ul{
+	margin-left: 35px;
+	margin-top: 15px;
+	
+}
+.menuText ul .firstLi{
+	height: 35px;
+	
+}
+.menuText ul .firstLi{
+	
+
+}
+.menuText ul li ul{
+	display: none;
+	overflow: hidden;
+	margin-left: 0px;
+	margin-top: 0px;
+	height: 175px;
+	background: #292929;
+	margin-top: 7px;
+	margin-left: -35px;
+
+}
+.menuText ul li ul li{
+	overflow: hidden;
+	margin-left: 50px;
+	line-height: 35px;
+	height:35px;
+}
+
+.menuText ul li ul li{
+	margin-bottom: 0px;
+}
+.menuText ul li ul li a{
+	color:#fff;
+}
+/*
+.menuText ul .firstLi:hover{
+	margin-bottom: 175px;
+	
+}
+.menuText ul .firstLi:hover ul{
+	
+	height: 175px;
+	
+}
+.menuText ul .firstLi:hover ul li{
+	height: 35px;
+	
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#mainSlider{
+	width:100%;
+	position: relative;
+}
+.mainBanner1{
+	width:100%;
+	background: url(../images/index/banner1_1.png) no-repeat;
+	height:auto;
+	padding: 22% 0;
+	background-size:100%;
+}
+.mainBanner2{
+	width:100%;
+	background: url(../images/index/banner1_2.jpg) no-repeat;
+	height:auto;
+	padding: 22% 0;
+	background-size:100%;
+}
+.mainBanner3{
+	width:100%;
+	background: url(../images/index/banner1_3.jpg) no-repeat;
+	height:auto;
+	padding: 22% 0;
+	background-size:100%;
+}
+.mainBanner4{
+	width:100%;
+	background: url(../images/index/banner1_4.jpg) no-repeat;
+	height:auto;
+	padding: 22% 0;
+	background-size:100%;
+}
+
+#mainSlider a{
+	position: absolute;
+	display: block;
+	height: 100%;
+	width:100%;
+	top:0;
+}
+#mainSlider .slick{}
+
+#mainBox1{
+	
+}
+#mainBox1 .logo{
+	width:49%;
+	height: 55px;
+	background: url(../images/index/logo2.png) no-repeat;
+	background-position: center center;
+	padding: 6% 0;
+	display: inline-block;
+}
+#mainBox1 .text{
+	font-size:15px;
+	width:49%;
+	display: inline-block;
+	vertical-align: top;
+	padding:3% 1%;
+	box-sizing: border-box;
+	
+}
+#mainBox1 .text ul{}
+#mainBox1 .text ul li{
+	font-size:0.8em;
+}
+#mainBox1 .text ul li:nth-child(1){
+	font-size:1em;
+}
+
+#mainBox2{
+	width:100%;
+	position: relative;
+}
+#mainBox2 a{
+}
+#mainBox2 .Box2Banner1{
+	width:100%;
+	height: auto;
+	padding: 36% 0;
+	background: url(../images/index/banner2.png) no-repeat;
+	background-size:100%;
+}
+#mainBox2 .Box2Banner2{
+	width:100%;
+	height: auto;
+	padding: 36% 0;
+	background: url(../images/index/banner2_2.png) no-repeat;
+	background-size:100%;
+}
+#mainBox2 .Box2Banner3{
+	width:100%;
+	height: auto;
+	padding: 36% 0;
+	background: url(../images/index/banner2.png) no-repeat;
+	background-size:100%;
+}
+#mainBox2 .Box2Banner4{
+	width:100%;
+	height: auto;
+	padding: 36% 0;
+	background: url(../images/index/banner2_2.png) no-repeat;
+	background-size:100%;
+}
+
+
+#mainBox3{
+	width:100%;
+	
+	box-sizing: border-box;
+	
+}
+#mainBox3 a{
+	position: absolute;
+	display: block;
+	height: 100%;
+	width:100%;
+	top:0;
+}
+#mainBox3 .topBox{
+	margin-bottom: 2%;
+}
+#mainBox3 .topBox .topBox1{
+	float: left;
+	width:calc(50% - 4%);
+	margin-left: 3%;
+	height:auto;
+	background:url(../images/index/icon1.png) no-repeat;
+	background-size:100%;
+	padding: 17.5% 0;
+	position: relative;
+}
+#mainBox3 .topBox .topBox2{
+	width:calc(50% - 4%);
+	height:auto;
+	margin-left: 2%;
+	background:url(../images/index/icon2.png) no-repeat;
+	float: left;
+	background-size:100%;
+	padding: 17.5% 0;
+	position: relative;
+}
+#mainBox3 .middleBox{
+	margin-bottom: 2%;
+}
+#mainBox3 .middleBox .middleBox1{
+	width:calc(33% - 3%);
+	margin-left: 3%;
+	height:auto;
+	background:url(../images/index/icon3.png) no-repeat;
+	float: left;
+	background-size:100%;
+	padding: 11.3% 0;
+	position: relative;
+}
+#mainBox3 .middleBox .middleBox2{
+	width:calc(33% - 3%);
+	margin-left: 2%;
+	height:auto;
+	background:url(../images/index/icon4.png) no-repeat;
+	float: left;
+	background-size:100%;
+	padding: 11.3% 0;
+	position: relative;
+}
+#mainBox3 .middleBox .middleBox3{
+	width:calc(33% - 3%);
+	margin-left: 2%;
+	height:auto;
+	background:url(../images/index/icon5.png) no-repeat;
+	float: left;
+	background-size:100%;
+	padding: 11.3% 0;
+	position: relative;
+}
+#mainBox3 .bottomBox{
+	margin-bottom: 4%;
+}
+#mainBox3 .bottomBox .bottomBox1{
+	float: left;
+	width:calc(50% - 4%);
+	margin-left: 3%;
+	height:auto;
+	background:url(../images/index/icon6.png) no-repeat;
+	background-size:100%;
+	padding: 17.5% 0;
+	position: relative;
+}
+#mainBox3 .bottomBox .bottomBox2{
+	width:calc(50% - 4%);
+	height:auto;
+	margin-left: 2%;
+	background:url(../images/index/icon7.png) no-repeat;
+	float: left;
+	background-size:100%;
+	padding: 17.5% 0;
+	position: relative;
+}
+
+#footer{
+	
+}
+
+
+
+
+
+
+#cssmenu,
+#cssmenu ul,
+#cssmenu ul li,
+#cssmenu ul li a {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	list-style: none;
+	line-height: 1;
+	display: block;
+	position: relative;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	color:#fff; 
+	font-weight: bold;
+	font-size:15px;
+}
+#cssmenu {
+	width: 100%;
+	color: #ffffff;
+}
+#cssmenu ul{
+	width:400px;
+}
+#cssmenu ul ul {
+	display: none;
+}
+.align-right {
+	float: right;
+}
+#cssmenu > ul > li > a {
+	padding: 15px 20px;
+	cursor: pointer;
+	z-index: 2;
+	font-size: 14px;
+	font-weight: bold;
+}
+#cssmenu ul ul li{
+	background: #292929;
+}
+#cssmenu ul ul li a {
+	cursor: pointer;
+	padding: 10px 20px;
+	z-index: 1;
+	text-decoration: none;
+	font-size: 14px;
+	color: #fff;
+	
+	font-weight: 400;
+	margin-left: 15px;
+
+
+}
+#cssmenu ul ul ul li a {
+	padding-left: 30px;
+}
+
+
+
+
+.slick-arrow{
+	display: none;
+	position: absolute;
+	top:50%;
+	margin-top: -15px;
+	
+}
+.fa-angle-left{
+	z-index: 1;
+	left:5%;
+	font-size:0;
+}
+.fa-angle-right{
+	right:5%;
+	font-size:0;
+}
+
+
+
+
+
+
+
+
+
+
+
